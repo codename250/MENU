@@ -38,7 +38,7 @@
   .landing-logo-container { margin-bottom: 15px; }
   .landing-main-title {
     font-family: 'Georgia', serif;
-    font-size: 32px; /* 기존 26px에서 키움 */
+    font-size: 32px;
     font-weight: 700;
     letter-spacing: 3px;
     color: #8c2727;
@@ -46,7 +46,7 @@
   }
   .landing-sub-title {
     font-family: 'Noto Serif KR', serif;
-    font-size: 14px; /* 기존 12px에서 키움 */
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: 1.5px;
     color: #6b5e54;
@@ -54,13 +54,12 @@
   }
 
   /* 언어 버튼 그룹 */
-  
   .lang-btn-group {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* 버튼 사이 간격 넓히기 */
+    gap: 12px;
     width: 100%;
-    max-width: 360px; /* 기존 280px에서 키움 */
+    max-width: 360px;
     margin-top: 12px;
   }
 
@@ -68,9 +67,9 @@
     background-color: #8c2727;
     color: #fdfbf7;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 16px; /* 버튼 글씨 키움 (기존 14px) */
+    font-size: 16px;
     font-weight: 700;
-    padding: 16px 24px; /* 버튼 내부 여백 키움 (기존 12px 20px) */
+    padding: 16px 24px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -79,20 +78,20 @@
   }
   .btn-lang:hover { background-color: #721f1f; transform: translateY(-2px); }
 
-  /* 💡 전 세계 모든 언어가 담기는 강조 드롭다운 박스 */
+  /* 전 세계 모든 언어 드롭다운 박스 */
   .other-lang-box {
     margin-top: 16px;
-    padding: 18px; /* 내부 여백 키움 */
+    padding: 18px;
     background-color: #f3eee3;
     border: 2px solid #8c2727;
     border-radius: 8px;
     width: 100%;
-    max-width: 360px; /* 기존 280px에서 키움 */
+    max-width: 360px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(140, 39, 39, 0.15);
   }
   .other-lang-label {
-    font-size: 13.5px; /* 라벨 글씨 키움 (기존 12px) */
+    font-size: 13.5px;
     color: #8c2727;
     margin-bottom: 10px;
     font-weight: 700;
@@ -102,9 +101,9 @@
     background-color: #ffffff !important;
     border: 2px solid #8c2727 !important;
     border-radius: 6px !important;
-    padding: 12px 14px !important; /* 드롭다운 내부 여백 키움 */
+    padding: 12px 14px !important;
     font-family: 'Noto Sans KR', sans-serif !important;
-    font-size: 15px !important; /* 드롭다운 글씨 키움 (기존 13.5px) */
+    font-size: 15px !important;
     font-weight: 700 !important;
     color: #8c2727 !important;
     width: 100% !important;
@@ -113,7 +112,7 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
 
-  /* 구글 기본 위젯은 백그라운드 구동용으로 숨김 */
+  /* 구글 기본 위젯 숨김 */
   #google_translate_element { display: none !important; }
   .goog-te-banner-frame.skiptranslate { display: none !important; }
   body { top: 0px !important; }
@@ -138,50 +137,36 @@
   }
 
   /* ==========================================================================
-     [메뉴판 공통 디자인 스타일]
+     [메뉴판 공통 디자인 스타일 (페이지 분할 및 100vh 강제 제한 제거)]
      ========================================================================== */
-  @page { size: A4 portrait; margin: 0; }
-  .page {
-    width: 100%; /* 모바일 화면 가로 폭에 꽉 차게 설정 */
-    min-height: 100vh;
+  .menu-container {
+    width: 100%;
+    max-width: 600px;
     margin: 0 auto;
     background-color: #fdfbf7;
-    padding: 20px 16px; /* 스마트폰에서 보기 좋은 좌우 좁은 여백으로 변경 */
+    padding: 24px 16px;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
   }
 
-  .page-footer {
+  .menu-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
-    padding-top: 10px;
+    margin-top: 40px;
+    padding-top: 15px;
     border-top: 1px solid #dfd3c3;
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 10px;
     color: #7a6e62;
   }
   .footer-greeting { font-style: italic; }
-  .footer-page { white-space: nowrap; font-weight: 500; }
-  
-.page-footer1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 30px;
-    padding-top: 10px;
-    
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 10px;
-    color: #7a6e62;
-  }
+
   .menu-header {
     text-align: center;
-    margin-bottom: 18px;
+    margin-bottom: 24px;
     padding-bottom: 12px;
     border-bottom: 2.5px solid #8c2727;
   }
@@ -205,7 +190,7 @@
     border: 1px solid rgba(140, 39, 39, 0.35);
     border-left: 4px solid #8c2727;
     padding: 14px 18px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
   .rules-title {
     font-family: 'Georgia', 'Noto Serif KR', serif;
@@ -220,7 +205,7 @@
   .rules-list li { margin-bottom: 5px; padding-left: 12px; position: relative; }
   .rules-list li::before { content: "•"; color: #8c2727; font-weight: bold; position: absolute; left: 0; }
 
-  .section { margin-bottom: 18px; }
+  .section { margin-bottom: 24px; }
   .section-header {
     width: 100%;
     display: flex;
@@ -246,7 +231,7 @@
     white-space: nowrap;
   }
 
-  .menu-item { margin-bottom: 11px; }
+  .menu-item { margin-bottom: 12px; }
   .item-top { display: flex; align-items: baseline; justify-content: space-between; width: 100%; }
   .item-name-group { display: flex; align-items: baseline; }
   .item-name { font-family: 'Lora', sans-serif; font-size: 14.5px; font-weight: 700; color: #1f1a17; }
@@ -271,7 +256,7 @@
   }
 </style>
 
-<!-- 구글 번역기 공식 초기화 스크립트 (includedLanguages 제한 해제로 전 세계 모든 언어 지원) -->
+<!-- 구글 번역기 공식 초기화 스크립트 -->
 <script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
@@ -280,14 +265,9 @@
     }, 'google_translate_element');
   }
 
-  // 💡 드롭다운에서 언어를 고르는 즉시 메뉴판으로 전환 및 번역 적용 함수
   function selectWorldLanguage(langCode) {
     if (!langCode) return;
-
-    // 1. 구글 번역 쿠키 강제 세팅
     document.cookie = "googtrans=/ko/" + langCode;
-
-    // 2. 랜딩 화면을 즉시 숨기고 한국어 기본 메뉴판 영역을 표시한 뒤 최상단으로 이동
     const landing = document.getElementById('landing-screen');
     landing.style.opacity = '0';
     
@@ -297,7 +277,6 @@
       document.getElementById('backBtn').style.display = 'block';
       window.scrollTo(0, 0);
 
-      // 3. 구글 번역 위젯 콤보박스에 값 전달 후 변경 이벤트 발생 (또는 쿠키 반영을 위해 새로고침)
       var googleCombo = document.querySelector('.goog-te-combo');
       if (googleCombo) {
         googleCombo.value = langCode;
@@ -308,7 +287,6 @@
     }, 200);
   }
 
-  // 주력 3대 언어 버튼 클릭 시 이동 함수
   function switchLanguage(lang) {
     const landing = document.getElementById('landing-screen');
     landing.style.opacity = '0';
@@ -352,9 +330,7 @@
   <!-- 백그라운드 구글 번역 엔진 요소 -->
   <div id="google_translate_element"></div>
 
-  <!-- ==========================================================================
-     [인트로 / 랜딩 화면]
-     ========================================================================== -->
+  <!-- 인트로 / 랜딩 화면 -->
   <div id="landing-screen">
     <div class="landing-logo-container">
       <div class="landing-main-title">KOREAN BBQ &amp; DINING</div>
@@ -364,13 +340,11 @@
     
     <p style="font-size: 12.5px; color: #5c5046; margin-bottom: 8px;">Please select your preferred language<br>원하시는 언어를 선택해 주세요</p>
     
-    <!-- 주력 3대 언어 전용 버튼 -->
     <div class="lang-btn-group">
       <button class="btn-lang" onclick="switchLanguage('ko')">한국어 메뉴판</button>
       <button class="btn-lang" onclick="switchLanguage('en')">English Menu</button>
       <button class="btn-lang" onclick="switchLanguage('cn')">中文菜单</button>
       
-      <!-- 💡 전 세계 모든 국가 언어(구글 제공 전체)를 고를 수 있는 강조 드롭다운 박스 -->
       <div class="other-lang-box">
         <div class="other-lang-label">🌐 All Languages (전 세계 모든 언어 선택)</div>
         <select id="custom-translate-select" onchange="selectWorldLanguage(this.value)">
@@ -413,88 +387,53 @@
 
 
   <!-- ==========================================================================
-     [1] 한국어 메뉴판 영역 (기본 기준 & 구글 번역 적용 대상)
+     [1] 한국어 메뉴판 영역 (하나의 긴 스크롤 흐름으로 통합)
      ========================================================================== -->
   <div id="menu-ko" class="menu-pane">
-    <div class="page">
-      <header class="menu-header" style="margin-bottom: 20px;">
+    <div class="menu-container">
+      <header class="menu-header">
         <div class="main-title">능동숯불갈비</div>
-        <div class="sub-title">정통 한식 전문점 </div>
-        <div class="sub-title"> 1994년 개업, 모태 1982년</div>
+        <div class="sub-title">정통 한식 전문점</div>
+        <div class="sub-title">1994년 개업, 모태 1982년</div>
       </header>
 
-      <div class="rules-box" style="margin-bottom: 45px;">
+      <div class="rules-box">
         <div class="rules-title">&nbsp;&nbsp;&nbsp;&nbsp;구이 및 메인 요리 주문 안내 <span class="section-sub">(Order Rules)</span></div>
         <ul class="rules-list">
           <li><strong>기본 주문:</strong> 고기 및 메인 요리는 <strong>2인분 이상</strong> 주문이 원칙입니다.</li>
           <li><strong>생삼겹살 및 전골:</strong> 생삼겹살과 전골류는 해당 단일 메뉴로 <strong>2인분 이상</strong> 주문하셔야 합니다.</li>
-          <li><strong>숯불구이류 (갈비 종류):</strong> 양념LA갈비, 소갈비살, 돼지갈비 등 숯불구이류는 서로 섞어서 <strong> 2인분</strong> 주문이 가능합니다.</li>
+          <li><strong>숯불구이류 (갈비 종류):</strong> 양념LA갈비, 소갈비살, 돼지갈비 등 숯불구이류는 서로 섞어서 <strong>2인분</strong> 주문이 가능합니다.</li>
           <li><strong>불판이 다른 메뉴 주문:</strong> 숯불구이와 생삼겹살은 불판 종류가 다릅니다. 동시 주문 시 각각 2인분씩 <strong>총 4인분 이상</strong>부터 가능합니다.</li>
         </ul>
       </div>
 
-      <div class="section" style="margin-bottom: 75px;">
+      <!-- 구이 및 전골류 -->
+      <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;구이 및 전골류 </span>
-          
+          <span class="section-title">&nbsp;&nbsp;&nbsp;구이 및 전골류</span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">양념 LA갈비</span><span class="item-weight">&nbsp;&nbsp;(200g)</span></div><div class="item-price-group"><span class="item-price">23,000원</span></div></div>
-          <div class="item-desc">달콤짭조름한 특제 간장으로 재운 깊은 향이 일품인 LA갈비. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">소갈비살</span><span class="item-weight">&nbsp;&nbsp;(150g)</span></div><div class="item-price-group"><span class="item-price">23,000원</span></div></div>
-          <div class="item-desc">쫄깃한 식감과 고소한 풍미가 일품인 소갈비살. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">돼지갈비</span><span class="item-weight">&nbsp;&nbsp;(200g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div>
-          <div class="item-desc">깊고 진한 특제 간장 양념이 속까지 배어들어 입안에서 살살 녹는 국내산 돼지갈비. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">돼지왕갈비</span><span class="item-weight">&nbsp;&nbsp;(270g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div>
-          <div class="item-desc">특제 간장 양념으로 맛을 낸 넉넉하고 푸짐한 미국산 왕갈비. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">생삼겹살</span><span class="item-weight">&nbsp;&nbsp;(180g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div>
-          <div class="item-desc">두툼한 두께 속 꽉 찬 육즙과 고소한 풍미, 정성껏 엄선한 국내산 생삼겹살. <span class="highlight">삼겹살 전용 불판에 직접 구이.</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">소불고기전골</span><span class="item-weight">&nbsp;&nbsp;(200g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div>
-          <div class="item-desc">단짠의 조화가 일품인 부드러운 소고기와 다채로운 신선 채소가 듬뿍 담긴 따뜻한 소불고기전골.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">양념 LA갈비</span><span class="item-weight">&nbsp;&nbsp;(200g)</span></div><div class="item-price-group"><span class="item-price">23,000원</span></div></div><div class="item-desc">달콤짭조름한 특제 간장으로 재운 깊은 향이 일품인 LA갈비. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">소갈비살</span><span class="item-weight">&nbsp;&nbsp;(150g)</span></div><div class="item-price-group"><span class="item-price">23,000원</span></div></div><div class="item-desc">쫄깃한 식감과 고소한 풍미가 일품인 소갈비살. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">돼지갈비</span><span class="item-weight">&nbsp;&nbsp;(200g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div><div class="item-desc">깊고 진한 특제 간장 양념이 속까지 배어들어 입안에서 살살 녹는 국내산 돼지갈비. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">돼지왕갈비</span><span class="item-weight">&nbsp;&nbsp;(270g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div><div class="item-desc">특제 간장 양념으로 맛을 낸 넉넉하고 푸짐한 미국산 왕갈비. <span class="highlight">테이블 숯불 불판에 직접 구이.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">생삼겹살</span><span class="item-weight">&nbsp;&nbsp;(180g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div><div class="item-desc">두툼한 두께 속 꽉 찬 육즙과 고소한 풍미, 정성껏 엄선한 국내산 생삼겹살. <span class="highlight">삼겹살 전용 불판에 직접 구이.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">소불고기전골</span><span class="item-weight">&nbsp;&nbsp;(200g)</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div><div class="item-desc">단짠의 조화가 일품인 부드러운 소고기와 다채로운 신선 채소가 듬뿍 담긴 따뜻한 소불고기전골.</div></div>
       </div>
 
+      <!-- 비빔밥류 -->
       <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;비빔밥류</span>
-          
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">돌솥비빔밥</span></div><div class="item-price-group"><span class="item-price">10,000원</span></div></div>
-          <div class="item-desc">뜨거운 돌솥 위 신선한 채소와 고기, 계란프라이와 매콤달콤한 고추장이 빚어내는 영양 만점 비빔밥.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">양푼비빔밥</span></div><div class="item-price-group"><span class="item-price">10,000원</span></div></div>
-          <div class="item-desc">양푼 대접에 신선한 채소와 고기, 계란프라이와 매콤달콤한 고추장이 빚어내는 영양 만점 비빔밥.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">돌솥비빔밥</span></div><div class="item-price-group"><span class="item-price">10,000원</span></div></div><div class="item-desc">뜨거운 돌솥 위 신선한 채소와 고기, 계란프라이와 매콤달콤한 고추장이 빚어내는 영양 만점 비빔밥.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">양푼비빔밥</span></div><div class="item-price-group"><span class="item-price">10,000원</span></div></div><div class="item-desc">양푼 대접에 신선한 채소와 고기, 계란프라이와 매콤달콤한 고추장이 빚어내는 영양 만점 비빔밥.</div></div>
       </div>
 
-      <div class="page-footer1">
-        <span class="footer-greeting"></span>
-        <span class="footer-page"></span>
-      </div>
-    </div>
-
-    <!-- 한국어 2페이지 -->
-    <div class="page">
-      <div class="section" style="margin-bottom: 65px;">
+      <!-- 찌개 및 탕류 -->
+      <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;찌개 및 탕류  </span>
-          
+          <span class="section-title">&nbsp;&nbsp;&nbsp;찌개 및 탕류</span>
         </div>
-
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">특갈비탕</span></div><div class="item-price-group"><span class="item-price">18,000원</span></div></div><div class="item-desc">소갈비가 듬뿍 들어있는 맑고 깊은 맛의 담백한 특갈비탕.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">갈비탕</span></div><div class="item-price-group"><span class="item-price">13,000원</span></div></div><div class="item-desc">소갈비를 푹 끓여내어 맑고 깊은 맛의 담백한 갈비탕.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">뚝불고기</span></div><div class="item-price-group"><span class="item-price">11,000원</span></div></div><div class="item-desc">달콤한 양념 소고기에 채소와 당면을 넣은 뚝배기불고기.</div></div>
@@ -507,12 +446,11 @@
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">청국장</span></div><div class="item-price-group"><span class="item-price">9,000원</span></div></div><div class="item-desc">진하게 띄운 청국장 메주콩으로 구수하게 끓여낸 전통 찌개.</div></div>
       </div>
 
+      <!-- 볶음 및 덮밥류 -->
       <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;볶음 및 덮밥류</span>
-          
         </div>
-
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">제육덮밥</span></div><div class="item-price-group"><span class="item-price">11,000원</span></div></div><div class="item-desc">매콤하게 볶아낸 제육볶음. <span class="highlight">공기밥과 함께 비벼 드세요.</span></div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">제육볶음</span></div><div class="item-price-group"><span class="item-price">11,000원</span></div></div><div class="item-desc">매콤달콤한 고추장 양념에 돼지고기와 채소를 볶아낸 요리.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">오징어덮밥</span></div><div class="item-price-group"><span class="item-price">11,000원</span></div></div><div class="item-desc">쫄깃한 오징어 매콤 볶음. <span class="highlight">공기밥과 함께 비벼 드세요.</span></div></div>
@@ -520,43 +458,32 @@
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">오삼불고기</span></div><div class="item-price-group"><span class="item-price">11,000원</span></div></div><div class="item-desc"><span class="highlight">2인분 이상 주문 가능.</span> 쫄깃한 오징어와 고소한 돼지고기의 완벽한 조화.</div></div>
       </div>
 
-      <div class="page-footer1">
-        <span class="footer-greeting"></span>
-        <span class="footer-page"></span>
-      </div>
-    </div>
-
-    <!-- 한국어 3페이지 -->
-    <div class="page">
-      <div class="section" style="margin-bottom: 50px;">
+      <!-- 사이드 및 후식 메뉴 -->
+      <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;사이드 및 후식 메뉴</span>
-          
         </div>
-
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">보리냉면 [물냉면 / 비빔냉면]</span></div><div class="item-price-group"><span class="item-price">9,000원</span></div></div><div class="item-desc"> 구수하고 쫄깃한 풍미의 보리 면! 시원하고 깔끔한 육수 - 물냉면, 매콤달콤한 양념 - 비빔냉면.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">보리냉면 [물냉면 / 비빔냉면]</span></div><div class="item-price-group"><span class="item-price">9,000원</span></div></div><div class="item-desc">구수하고 쫄깃한 풍미의 보리 면! 시원하고 깔끔한 육수 - 물냉면, 매콤달콤한 양념 - 비빔냉면.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">후식누룽지</span></div><div class="item-price-group"><span class="item-price">5,000원</span></div></div><div class="item-desc">구수한 누룽지를 뚝배기에 푹 끓여낸 따뜻한 후식.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">계란찜</span></div><div class="item-price-group"><span class="item-price">5,000원</span></div></div><div class="item-desc">부드럽고 폭신한 식감의 뚝배기 계란찜.</div></div>
       </div>
 
-      <div class="section" style="margin-bottom: 50px;">
+      <!-- 리필 및 추가 주문 -->
+      <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;리필 및 추가 주문</span>
-          
         </div>
-
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">된장찌개 추가</span></div><div class="item-price-group"><span class="item-price">5,000원</span></div></div><div class="item-desc">고기와 함께 제공되는 우렁된장찌개 리필.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">게장 추가</span></div><div class="item-price-group"><span class="item-price">2,000원</span></div></div><div class="item-desc">고기와 함께 제공되는 매콤달콤한 전통 양념게장 리필.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">라면사리</span></div><div class="item-price-group"><span class="item-price">1,000원</span></div></div><div class="item-desc">찌개 및 전골류에 넣어먹는 사리.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">공기밥 추가</span></div><div class="item-price-group"><span class="item-price">1,000원</span></div></div><div class="item-desc">엄선한 국산 쌀로 지은 따뜻한 쌀밥.</div></div>
       </div>
 
+      <!-- 주류 및 음료 -->
       <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;주류 및 음료</span>
-          
         </div>
-
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">소주</span></div><div class="item-price-group"><span class="item-price">5,000원</span></div></div><div class="item-desc">참이슬(오리지날, 프레시), 처음처럼, 새로, 진로.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">맥주</span></div><div class="item-price-group"><span class="item-price">5,000원</span></div></div><div class="item-desc">카스, 테라.</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">복분자</span></div><div class="item-price-group"><span class="item-price">15,000원</span></div></div><div class="item-desc">보해 복분자. 국산 복분자로 빚은 달콤하고 진한 전통 과실주.</div></div>
@@ -566,322 +493,138 @@
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">무알콜 맥주</span></div><div class="item-price-group"><span class="item-price">3,000원</span></div></div><div class="item-desc">알코올 0! 칼로리 0! 걱정 없이 즐기는 음료.</div></div>
       </div>
 
-      <div class="page-footer">
+      <footer class="menu-footer">
         <span class="footer-greeting">능동숯불갈비에 오신 것을 환영합니다! 알레르기나 식이 제한이 있으신 경우 미리 말씀해 주세요.</span>
-        <span class="footer-page"></span>
+      </footer>
+    </div>
   </div>
-</div><!-- 3페이지 종료 -->
-  </div>
+
+
   <!-- ==========================================================================
-     [1] 영문 메뉴판 영역 (EN)
+     [2] 영문 메뉴판 영역 (EN)
      ========================================================================== -->
   <div id="menu-en" class="menu-pane">
-    <div class="page">
-      <header class="menu-header" style="margin-bottom: 20px;">
+    <div class="menu-container">
+      <header class="menu-header">
         <div class="main-title">KOREAN BBQ &amp; DINING</div>
         <div class="sub-title">AUTHENTIC KOREAN CUISINE · Neung-Dong Charcoal BBQ</div>
         <div class="sub-title">SINCE 1994, ORIGINATED 1982</div>
       </header>
 
-      <div class="rules-box" style="margin-bottom: 45px;">
+      <div class="rules-box">
         <div class="rules-title">&nbsp;&nbsp;&nbsp;&nbsp;BBQ &amp; Main Dish Ordering Rules <span class="section-sub">(주문 안내)</span></div>
         <ul class="rules-list">
           <li><strong>Minimum Order:</strong> All BBQ and Main Dishes must be ordered for a <strong>minimum of 2 servings</strong>.</li>
-      <li><strong>Charcoal BBQ (Galbi &amp; Ribs):</strong> You can mix and match different Charcoal BBQ items (LA Galbi, Beef Ribs, Pork Ribs) to reach the 2-serving minimum.</li>
-      <li><strong>Fresh Pork Belly &amp; Hot Pot:</strong> Pork Belly and Hot Pot dishes must be ordered as at least 2 servings of the same item (Single-item minimum of 2 servings).</li>
-      <li><strong>Combining Different Grill Types:</strong> Charcoal BBQ items and Fresh Pork Belly use different grill setups. If you wish to enjoy both, a minimum of 2 servings per grill type (4 servings total) is required.</li>
+          <li><strong>Charcoal BBQ (Galbi &amp; Ribs):</strong> You can mix and match different Charcoal BBQ items (LA Galbi, Beef Ribs, Pork Ribs) to reach the 2-serving minimum.</li>
+          <li><strong>Fresh Pork Belly &amp; Hot Pot:</strong> Pork Belly and Hot Pot dishes must be ordered as at least 2 servings of the same item.</li>
+          <li><strong>Combining Different Grill Types:</strong> Charcoal BBQ items and Fresh Pork Belly use different grill setups. A minimum of 2 servings per grill type (4 servings total) is required.</li>
         </ul>
       </div>
 
-      <div class="section" style="margin-bottom: 75px;">
+      <!-- BBQ & Main Dishes -->
+      <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;BBQ &amp; MAIN DISHES (Grilled &amp; Hot Pot)</span>
-          <span class="section-sub"></span>
+          <span class="section-title">&nbsp;&nbsp;&nbsp;BBQ &amp; MAIN DISHES</span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top">
-            <div class="item-name-group">
-              <span class="item-name">Marinated LA Galbi</span>
-              <span class="item-weight">&nbsp;&nbsp;(200g)</span>
-              <span class="item-kr">&nbsp;&nbsp;(양념LA갈비)</span>
-            </div>
-            <div class="item-price-group"><span class="item-price">23,000 KRW</span></div>
-          </div>
-          <div class="item-desc">Sweet &amp; savory soy-marinated cross-cut beef short ribs. <span class="highlight">Grilled at your table over live charcoal.</span></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-top">
-            <div class="item-name-group">
-              <span class="item-name">Beef Rib Meat</span>
-              <span class="item-weight">&nbsp;&nbsp;(150g)</span>
-              <span class="item-kr">&nbsp;&nbsp;(소갈비살)</span>
-            </div>
-            <div class="item-price-group"><span class="item-price">23,000 KRW</span></div>
-          </div>
-          <div class="item-desc">Tender and juicy unseasoned beef rib fingers. <span class="highlight">Grilled at your table over live charcoal.</span></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-top">
-            <div class="item-name-group">
-              <span class="item-name">Marinated Pork Ribs</span>
-              <span class="item-weight">&nbsp;&nbsp;(200g)</span>
-              <span class="item-kr">&nbsp;&nbsp;(돼지갈비)</span>
-            </div>
-            <div class="item-price-group"><span class="item-price">18,000 KRW</span></div>
-          </div>
-          <div class="item-desc">Tender pork ribs marinated in sweet soy sauce. <span class="highlight">Grilled at your table over live charcoal.</span></div>
-        </div>
-
-        
-        <div class="menu-item">
-          <div class="item-top">
-            <div class="item-name-group">
-              <span class="item-name">Fresh Pork Belly</span>
-              <span class="item-weight">&nbsp;&nbsp;(180g)</span>
-              <span class="item-kr">&nbsp;&nbsp;(생삼겹살)</span>
-            </div>
-            <div class="item-price-group"><span class="item-price">18,000 KRW</span></div>
-          </div>
-          <div class="item-desc">High-quality thick-cut fresh pork belly. <span class="highlight">Cooked at your table on a heavy specialized grill plate.</span></div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-top">
-            <div class="item-name-group">
-              <span class="item-name">Beef Bulgogi Hot Pot</span>
-              <span class="item-weight">&nbsp;&nbsp;(200g)</span>
-              <span class="item-kr">&nbsp;&nbsp;(소불고기전골)</span>
-            </div>
-            <div class="item-price-group"><span class="item-price">18,000 KRW</span></div>
-          </div>
-          <div class="item-desc">Thinly sliced beef marinated in sweet soy sauce, cooked with vegetables and glass noodles in a savory broth.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Marinated LA Galbi</span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(양념LA갈비)</span></div><div class="item-price-group"><span class="item-price">23,000 KRW</span></div></div><div class="item-desc">Sweet &amp; savory soy-marinated cross-cut beef short ribs. <span class="highlight">Grilled at your table over live charcoal.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Beef Rib Meat</span><span class="item-weight">&nbsp;&nbsp;(150g)</span><span class="item-kr">&nbsp;&nbsp;(소갈비살)</span></div><div class="item-price-group"><span class="item-price">23,000 KRW</span></div></div><div class="item-desc">Tender and juicy unseasoned beef rib fingers. <span class="highlight">Grilled at your table over live charcoal.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Marinated Pork Ribs</span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(돼지갈비)</span></div><div class="item-price-group"><span class="item-price">18,000 KRW</span></div></div><div class="item-desc">Tender pork ribs marinated in sweet soy sauce. <span class="highlight">Grilled at your table over live charcoal.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Fresh Pork Belly</span><span class="item-weight">&nbsp;&nbsp;(180g)</span><span class="item-kr">&nbsp;&nbsp;(생삼겹살)</span></div><div class="item-price-group"><span class="item-price">18,000 KRW</span></div></div><div class="item-desc">High-quality thick-cut fresh pork belly. <span class="highlight">Cooked at your table on a heavy specialized grill plate.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Beef Bulgogi Hot Pot</span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(소불고기전골)</span></div><div class="item-price-group"><span class="item-price">18,000 KRW</span></div></div><div class="item-desc">Thinly sliced beef marinated in sweet soy sauce, cooked with vegetables and glass noodles in a savory broth.</div></div>
       </div>
 
+      <!-- Bibimbap -->
       <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;BIBIMBAP</span>
-          <span class="section-sub"></span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top">
-            <div class="item-name-group">
-              <span class="item-name">Hot Stone Pot Bibimbap</span>
-              <span class="item-kr">&nbsp;&nbsp;(돌솥비빔밥)</span>
-            </div>
-            <div class="item-price-group"><span class="item-price">10,000 KRW</span></div>
-          </div>
-          <div class="item-desc">Steamed rice topped with vegetables, meat &amp; pepper paste. Served in a sizzling hot stone pot.</div>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-top">
-            <div class="item-name-group">
-              <span class="item-name">Mixed Rice in Brass Bowl</span>
-              <span class="item-kr">&nbsp;&nbsp;(양푼비빔밥)</span>
-            </div>
-            <div class="item-price-group"><span class="item-price">10,000 KRW</span></div>
-          </div>
-          <div class="item-desc">Classic Bibimbap served in a traditional large metal mixing bowl.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Hot Stone Pot Bibimbap</span><span class="item-kr">&nbsp;&nbsp;(돌솥비빔밥)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div><div class="item-desc">Steamed rice topped with vegetables, meat &amp; pepper paste. Served in a sizzling hot stone pot.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Mixed Rice in Brass Bowl</span><span class="item-kr">&nbsp;&nbsp;(양푼비빔밥)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div><div class="item-desc">Classic Bibimbap served in a traditional large metal mixing bowl.</div></div>
       </div>
 
-      <div class="page-footer1">
-        <span class="footer-greeting"></span>
-        <span class="footer-page"></span>
-      </div>
-    </div>
-
-    <!-- 영문 2페이지 -->
-    <div class="page">
-      <div class="section" style="margin-bottom: 65px;">
+      <!-- Soup & Stews -->
+      <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;SOUP &amp; STEWS &nbsp; (Served in a hot earthenware pot)</span>
-          <span class="section-sub"></span>
+          <span class="section-title">&nbsp;&nbsp;&nbsp;SOUP &amp; STEWS</span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Large Beef Short Rib Soup</span><span class="item-kr">&nbsp;&nbsp;(특갈비탕)</span></div><div class="item-price-group"><span class="item-price">18,000 KRW</span></div></div>
-          <div class="item-desc">A rich and nourishing beef short rib soup with a generous extra portion of meat.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Beef Short Rib Soup</span><span class="item-kr">&nbsp;&nbsp;(갈비탕)</span></div><div class="item-price-group"><span class="item-price">13,000 KRW</span></div></div>
-          <div class="item-desc">A hearty, clear soup made by simmering beef short ribs until tender.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Beef Bulgogi Stew</span><span class="item-kr">&nbsp;&nbsp;(뚝불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div>
-          <div class="item-desc">Sweet marinated beef stew with vegetables and glass noodles.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Beef Tripe Soup</span><span class="item-kr">&nbsp;&nbsp;(소내장탕)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div>
-          <div class="item-desc">A spicy and robust soup made with beef intestines and vegetables.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Clam Soybean Paste Stew</span><span class="item-kr">&nbsp;&nbsp;(바지락된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div>
-          <div class="item-desc">Traditional soybean paste stew cooked with fresh clams and tofu.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Beef Brisket Soybean Paste Stew</span><span class="item-kr">&nbsp;&nbsp;(차돌된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div>
-          <div class="item-desc">Rich soybean paste stew cooked with thin beef brisket and tofu.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Budae Jjigae / Army Stew</span><span class="item-kr">&nbsp;&nbsp;(부대찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div>
-          <div class="item-desc">A popular spicy Korean stew made with ham, sausage, kimchi, tofu, and vegetables.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Kimchi Stew</span><span class="item-kr">&nbsp;&nbsp;(김치찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div>
-          <div class="item-desc">A classic, comforting Korean stew made with aged kimchi, pork, and tofu.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Soft Tofu Stew</span><span class="item-kr">&nbsp;&nbsp;(순두부)</span></div><div class="item-price-group"><span class="item-price">9,000 KRW</span></div></div>
-          <div class="item-desc">A popular spicy stew made with silky smooth soft tofu.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Rich Fermented Soybean Stew</span><span class="item-kr">&nbsp;&nbsp;(청국장)</span></div><div class="item-price-group"><span class="item-price">9,000 KRW</span></div></div>
-          <div class="item-desc">A thick stew made from deeply fermented soybeans and tofu.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Large Beef Short Rib Soup</span><span class="item-kr">&nbsp;&nbsp;(특갈비탕)</span></div><div class="item-price-group"><span class="item-price">18,000 KRW</span></div></div><div class="item-desc">A rich and nourishing beef short rib soup with a generous extra portion of meat.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Beef Short Rib Soup</span><span class="item-kr">&nbsp;&nbsp;(갈비탕)</span></div><div class="item-price-group"><span class="item-price">13,000 KRW</span></div></div><div class="item-desc">A hearty, clear soup made by simmering beef short ribs until tender.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Beef Bulgogi Stew</span><span class="item-kr">&nbsp;&nbsp;(뚝불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div><div class="item-desc">Sweet marinated beef stew with vegetables and glass noodles.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Beef Tripe Soup</span><span class="item-kr">&nbsp;&nbsp;(소내장탕)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div><div class="item-desc">A spicy and robust soup made with beef intestines and vegetables.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Clam Soybean Paste Stew</span><span class="item-kr">&nbsp;&nbsp;(바지락된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div><div class="item-desc">Traditional soybean paste stew cooked with fresh clams and tofu.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Beef Brisket Soybean Paste Stew</span><span class="item-kr">&nbsp;&nbsp;(차돌된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div><div class="item-desc">Rich soybean paste stew cooked with thin beef brisket and tofu.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Budae Jjigae / Army Stew</span><span class="item-kr">&nbsp;&nbsp;(부대찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div><div class="item-desc">A popular spicy Korean stew made with ham, sausage, kimchi, tofu, and vegetables.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Kimchi Stew</span><span class="item-kr">&nbsp;&nbsp;(김치찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 KRW</span></div></div><div class="item-desc">A classic, comforting Korean stew made with aged kimchi, pork, and tofu.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Soft Tofu Stew</span><span class="item-kr">&nbsp;&nbsp;(순두부)</span></div><div class="item-price-group"><span class="item-price">9,000 KRW</span></div></div><div class="item-desc">A popular spicy stew made with silky smooth soft tofu.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Rich Fermented Soybean Stew</span><span class="item-kr">&nbsp;&nbsp;(청국장)</span></div><div class="item-price-group"><span class="item-price">9,000 KRW</span></div></div><div class="item-desc">A thick stew made from deeply fermented soybeans and tofu.</div></div>
       </div>
 
+      <!-- Stir-fried Dishes & Rice Bowls -->
       <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;STIR-FRIED DISHES &amp; RICE BOWLS</span>
-          <span class="section-sub"></span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Pork Rice Bowl</span><span class="item-kr">&nbsp;&nbsp;(제육덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div>
-          <div class="item-desc">Stir-fried spicy marinated pork. <span class="highlight">Served with a bowl of rice on the side to mix together.</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Stir-fried Spicy Pork</span><span class="item-kr">&nbsp;&nbsp;(제육볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div>
-          <div class="item-desc">A classic Korean dish of pork marinated in a spicy chili sauce and stir-fried with vegetables.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Squid Rice Bowl</span><span class="item-kr">&nbsp;&nbsp;(오징어덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div>
-          <div class="item-desc">Stir-fried spicy squid with vegetables. <span class="highlight">Served with a bowl of rice on the side to mix together.</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Stir-fried Spicy Squid</span><span class="item-kr">&nbsp;&nbsp;(오징어볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div>
-          <div class="item-desc">Tender squid stir-fried with vegetables in a spicy and flavorful chili sauce.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Squid &amp; Pork Belly</span><span class="item-kr">&nbsp;&nbsp;(오삼불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div>
-          <div class="item-desc"><span class="highlight">A minimum of 2 servings required.</span> A perfect combination of squid and pork belly stir-fried in a spicy chili sauce.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Pork Rice Bowl</span><span class="item-kr">&nbsp;&nbsp;(제육덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div><div class="item-desc">Stir-fried spicy marinated pork. <span class="highlight">Served with a bowl of rice on the side.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Stir-fried Spicy Pork</span><span class="item-kr">&nbsp;&nbsp;(제육볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div><div class="item-desc">A classic Korean dish of pork marinated in a spicy chili sauce and stir-fried with vegetables.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Squid Rice Bowl</span><span class="item-kr">&nbsp;&nbsp;(오징어덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div><div class="item-desc">Stir-fried spicy squid with vegetables. <span class="highlight">Served with a bowl of rice on the side.</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Stir-fried Spicy Squid</span><span class="item-kr">&nbsp;&nbsp;(오징어볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div><div class="item-desc">Tender squid stir-fried with vegetables in a spicy and flavorful chili sauce.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Spicy Squid &amp; Pork Belly</span><span class="item-kr">&nbsp;&nbsp;(오삼불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 KRW</span></div></div><div class="item-desc"><span class="highlight">A minimum of 2 servings required.</span> Squid and pork belly stir-fried in a spicy chili sauce.</div></div>
       </div>
 
-      <div class="page-footer1">
-        <span class="footer-greeting"></span>
-        <span class="footer-page"></span>
-      </div>
-    </div>
-
-    <!-- 영문 3페이지 -->
-    <div class="page">
-      <div class="section" style="margin-bottom: 50px;">
+      <!-- Sides & Add-ons -->
+      <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;SIDES &amp; ADD-ONS</span>
-          <span class="section-sub"></span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Barley Cold Noodles [Water / Spicy]</span><span class="item-kr">&nbsp;&nbsp;(보리냉면 [물/비빔])</span></div><div class="item-price-group"><span class="item-price">9,000 KRW</span></div></div>
-          <div class="item-desc">Chewy noodles served in chilled broth (Water) or with spicy sauce (Spicy).</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Scorched Rice Soup</span><span class="item-kr">&nbsp;&nbsp;(후식누룽지)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div>
-          <div class="item-desc">A warm, comforting porridge made by boiling crispy scorched rice in an earthenware pot.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Steamed Egg Pot</span><span class="item-kr">&nbsp;&nbsp;(계란찜)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div>
-          <div class="item-desc">A fluffy, savory, soufflé-like Korean steamed egg served in a hot earthenware pot.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Barley Cold Noodles [Water / Spicy]</span><span class="item-kr">&nbsp;&nbsp;(보리냉면)</span></div><div class="item-price-group"><span class="item-price">9,000 KRW</span></div></div><div class="item-desc">Chewy noodles served in chilled broth (Water) or with spicy sauce (Spicy).</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Scorched Rice Soup</span><span class="item-kr">&nbsp;&nbsp;(후식누룽지)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div><div class="item-desc">A warm, comforting porridge made by boiling crispy scorched rice.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Steamed Egg Pot</span><span class="item-kr">&nbsp;&nbsp;(계란찜)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div><div class="item-desc">A fluffy, savory, soufflé-like Korean steamed egg.</div></div>
       </div>
 
-      <div class="section" style="margin-bottom: 50px;">
+      <!-- Extra Orders & Refills -->
+      <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;EXTRA ORDERS &amp; REFILLS</span>
-          <span class="section-sub"></span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Extra Soybean Paste Stew</span><span class="item-kr">&nbsp;&nbsp;(된장찌개 추가)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div>
-          <div class="item-desc">Served in a hot earthenware pot.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Extra Marinated Spicy Crab</span><span class="item-kr">&nbsp;&nbsp;(게장 추가)</span></div><div class="item-price-group"><span class="item-price">2,000 KRW</span></div></div>
-          <div class="item-desc">Traditional spicy marinated raw crab side dish.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Ramen Noodles Add-on</span><span class="item-kr">&nbsp;&nbsp;(라면사리)</span></div><div class="item-price-group"><span class="item-price">1,000 KRW</span></div></div>
-          <div class="item-desc">Instant ramen noodle block to add into stews or hot pots.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Extra Steamed Rice</span><span class="item-kr">&nbsp;&nbsp;(밥 추가)</span></div><div class="item-price-group"><span class="item-price">1,000 KRW</span></div></div>
-          <div class="item-desc">A bowl of freshly steamed white rice.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Extra Soybean Paste Stew</span><span class="item-kr">&nbsp;&nbsp;(된장찌개 추가)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div><div class="item-desc">Served in a hot earthenware pot.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Extra Marinated Spicy Crab</span><span class="item-kr">&nbsp;&nbsp;(게장 추가)</span></div><div class="item-price-group"><span class="item-price">2,000 KRW</span></div></div><div class="item-desc">Traditional spicy marinated raw crab side dish.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Ramen Noodles Add-on</span><span class="item-kr">&nbsp;&nbsp;(라면사리)</span></div><div class="item-price-group"><span class="item-price">1,000 KRW</span></div></div><div class="item-desc">Instant ramen noodle block to add into stews or hot pots.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Extra Steamed Rice</span><span class="item-kr">&nbsp;&nbsp;(밥 추가)</span></div><div class="item-price-group"><span class="item-price">1,000 KRW</span></div></div><div class="item-desc">A bowl of freshly steamed white rice.</div></div>
       </div>
 
+      <!-- Beverages & Alcohol -->
       <div class="section">
         <div class="section-header">
           <span class="section-title">&nbsp;&nbsp;&nbsp;BEVERAGES &amp; ALCOHOL</span>
-          <span class="section-sub"></span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Soju</span><span class="item-kr">&nbsp;&nbsp;(소주)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div>
-          <div class="item-desc">A popular Korean clear distilled liquor.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Beer</span><span class="item-kr">&nbsp;&nbsp;(맥주)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div>
-          <div class="item-desc">Crisp and refreshing Korean bottled beer.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Bokbunja / Black Raspberry Wine</span><span class="item-kr">&nbsp;&nbsp;(복분자)</span></div><div class="item-price-group"><span class="item-price">15,000 KRW</span></div></div>
-          <div class="item-desc">Traditional Korean sweet dessert wine made from wild black raspberries.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Cheongha / Clean Rice Wine</span><span class="item-kr">&nbsp;&nbsp;(청하)</span></div><div class="item-price-group"><span class="item-price">6,000 KRW</span></div></div>
-          <div class="item-desc">A light, crisp, and smooth refined Korean rice wine.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Makgeolli / Rice Wine</span><span class="item-kr">&nbsp;&nbsp;(막걸리)</span></div><div class="item-price-group"><span class="item-price">4,000 KRW</span></div></div>
-          <div class="item-desc">A traditional milky, slightly sweet fermented rice wine.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Soft Drinks</span><span class="item-kr">&nbsp;&nbsp;(음료수)</span></div><div class="item-price-group"><span class="item-price">2,000 KRW</span></div></div>
-          <div class="item-desc">Coca-Cola, Sprite, Coca-Cola Zero, Fanta Pineapple.</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">Non-Alcoholic Beer</span><span class="item-kr">&nbsp;&nbsp;(무알콜 맥주)</span></div><div class="item-price-group"><span class="item-price">3,000 KRW</span></div></div>
-          <div class="item-desc">Refreshing malt beverage with zero alcohol.</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Soju</span><span class="item-kr">&nbsp;&nbsp;(소주)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div><div class="item-desc">A popular Korean clear distilled liquor.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Beer</span><span class="item-kr">&nbsp;&nbsp;(맥주)</span></div><div class="item-price-group"><span class="item-price">5,000 KRW</span></div></div><div class="item-desc">Crisp and refreshing Korean bottled beer.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Bokbunja / Black Raspberry Wine</span><span class="item-kr">&nbsp;&nbsp;(복분자)</span></div><div class="item-price-group"><span class="item-price">15,000 KRW</span></div></div><div class="item-desc">Traditional Korean sweet dessert wine made from wild black raspberries.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Cheongha / Clean Rice Wine</span><span class="item-kr">&nbsp;&nbsp;(청하)</span></div><div class="item-price-group"><span class="item-price">6,000 KRW</span></div></div><div class="item-desc">A light, crisp, and smooth refined Korean rice wine.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Makgeolli / Rice Wine</span><span class="item-kr">&nbsp;&nbsp;(막걸리)</span></div><div class="item-price-group"><span class="item-price">4,000 KRW</span></div></div><div class="item-desc">A traditional milky, slightly sweet fermented rice wine.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Soft Drinks</span><span class="item-kr">&nbsp;&nbsp;(음료수)</span></div><div class="item-price-group"><span class="item-price">2,000 KRW</span></div></div><div class="item-desc">Coca-Cola, Sprite, Coca-Cola Zero, Fanta Pineapple.</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">Non-Alcoholic Beer</span><span class="item-kr">&nbsp;&nbsp;(무알콜 맥주)</span></div><div class="item-price-group"><span class="item-price">3,000 KRW</span></div></div><div class="item-desc">Refreshing malt beverage with zero alcohol.</div></div>
       </div>
 
-      <div class="page-footer">
+      <footer class="menu-footer">
         <span class="footer-greeting">Welcome to our restaurant! Please let us know if you have any dietary restrictions.</span>
-        <span class="footer-page"></span>
-      </div>
+      </footer>
     </div>
   </div>
 
-  
+
   <!-- ==========================================================================
      [3] 중국어 메뉴판 영역 (CN)
      ========================================================================== -->
   <div id="menu-cn" class="menu-pane">
-    <div class="page">
-      <header class="menu-header" style="margin-bottom: 20px;">
+    <div class="menu-container">
+      <header class="menu-header">
         <div class="main-title" style="letter-spacing: 2px;">능동숯불갈비 (凌洞炭烤排骨)</div>
         <div class="sub-title">正宗韩国料理 · 炭火烤肉餐厅</div>
         <div class="sub-title">始创于1994年 (渊源1982年)</div>
       </header>
 
-      <div class="rules-box" style="margin-bottom: 45px;">
+      <div class="rules-box">
         <div class="rules-title">&nbsp;&nbsp;&nbsp;&nbsp;烤肉及主菜点餐须知 <span class="section-sub">(点餐规则)</span></div>
         <ul class="rules-list">
           <li><strong>起点份数：</strong>所有烤肉及主菜类菜品<strong>x2人份起点</strong>。</li>
@@ -891,141 +634,96 @@
         </ul>
       </div>
 
-      <div class="section" style="margin-bottom: 75px;">
-        <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;烤肉及火锅类 </span>
-          <span class="section-sub"></span>
-        </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">调味 LA 牛排 </span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(양념LA갈비)</span></div><div class="item-price-group"><span class="item-price">23,000 韩元</span></div></div>
-          <div class="item-desc">甜咸秘制酱汁腌制的横切牛排。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">精品牛肋条 </span><span class="item-weight">&nbsp;&nbsp;(150g)</span><span class="item-kr">&nbsp;&nbsp;(소갈비살)</span></div><div class="item-price-group"><span class="item-price">23,000 韩元</span></div></div>
-          <div class="item-desc">鲜嫩多汁的原味牛肋肉。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">调味猪排 </span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(돼지갈비)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div>
-          <div class="item-desc">甜酱油酱汁腌制的鲜嫩猪排。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div>
-        </div>
-        
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">厚切生五花肉 </span><span class="item-weight">&nbsp;&nbsp;(180g)</span><span class="item-kr">&nbsp;&nbsp;(생삼겹살)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div>
-          <div class="item-desc">优质厚切新鲜猪五花肉。 <span class="highlight">在特制厚重铁板上现场烹制。</span></div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">韩式牛肉火锅 </span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(소불고기전골)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div>
-          <div class="item-desc">甜酱油腌制的薄切牛肉，与蔬菜和粉条在浓郁高汤中炖煮。</div>
-        </div>
-      </div>
-
+      <!-- 烤肉及火锅类 -->
       <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;韩式拌饭类 </span>
-          <span class="section-sub"></span>
+          <span class="section-title">&nbsp;&nbsp;&nbsp;烤肉及火锅类</span>
         </div>
-
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">传统石锅拌饭 </span><span class="item-kr">&nbsp;&nbsp;(돌솥비빔밥)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div>
-          <div class="item-desc">米饭铺上各色蔬菜、肉类与辣椒酱，装在滚烫的石锅中。</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-top"><div class="item-name-group"><span class="item-name">铜盆特色拌饭 </span><span class="item-kr">&nbsp;&nbsp;(양푼비빔밥)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div>
-          <div class="item-desc">盛装在传统大型金属混合盆中的经典拌饭。</div>
-        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">调味 LA 牛排</span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(양념LA갈비)</span></div><div class="item-price-group"><span class="item-price">23,000 韩元</span></div></div><div class="item-desc">甜咸秘制酱汁腌制的横切牛排。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">精品牛肋条</span><span class="item-weight">&nbsp;&nbsp;(150g)</span><span class="item-kr">&nbsp;&nbsp;(소갈비살)</span></div><div class="item-price-group"><span class="item-price">23,000 韩元</span></div></div><div class="item-desc">鲜嫩多汁的原味牛肋肉。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">调味猪排</span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(돼지갈비)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div><div class="item-desc">甜酱油酱汁腌制的鲜嫩猪排。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">厚切生五花肉</span><span class="item-weight">&nbsp;&nbsp;(180g)</span><span class="item-kr">&nbsp;&nbsp;(생삼겹살)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div><div class="item-desc">优质厚切新鲜猪五花肉。 <span class="highlight">在特制厚重铁板上现场烹制。</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">韩式牛肉火锅</span><span class="item-weight">&nbsp;&nbsp;(200g)</span><span class="item-kr">&nbsp;&nbsp;(소불고기전골)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div><div class="item-desc">甜酱油腌制的薄切牛肉，与蔬菜和粉条在浓郁高汤中炖煮。</div></div>
       </div>
 
-      <div class="page-footer1">
-        <span class="footer-greeting"></span>
-        <span class="footer-page"></span>
-      </div>
-    </div>
-
-    <!-- 중국어 2페이지 -->
-    <div class="page">
-      <div class="section" style="margin-bottom: 65px;">
-        <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;汤类与炖菜 </span>
-          <span class="section-sub"></span>
-        </div>
-
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">特级牛排骨汤 </span><span class="item-kr">&nbsp;&nbsp;(특갈비탕)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div><div class="item-desc">营养丰富、牛肉分量加倍的浓郁牛排骨汤。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">牛排骨汤 </span><span class="item-kr">&nbsp;&nbsp;(갈비탕)</span></div><div class="item-price-group"><span class="item-price">13,000 韩元</span></div></div><div class="item-desc">慢火熬煮牛排骨制成的清澈滋补汤品。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">砂锅牛肉汤 </span><span class="item-kr">&nbsp;&nbsp;(뚝불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">甜味腌制牛肉搭配蔬菜与粉丝的砂锅菜。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣牛杂汤 </span><span class="item-kr">&nbsp;&nbsp;(소내장탕)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">用牛内脏和蔬菜熬制的浓郁辛辣汤品。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">鲜蛤大酱汤 </span><span class="item-kr">&nbsp;&nbsp;(바지락된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">用新鲜蛤蜊和豆腐烹制的传统大酱汤。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">牛胸肉大酱汤 </span><span class="item-kr">&nbsp;&nbsp;(차돌된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">加入细嫩牛胸肉与豆腐的浓郁大酱汤。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">部队火锅 / 军队 </span><span class="item-kr">&nbsp;&nbsp;(부대찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">由火腿、香肠、泡菜、豆腐和蔬菜制成的热门微辣炖菜。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">泡菜豆腐汤 </span><span class="item-kr">&nbsp;&nbsp;(김치찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">陈年泡菜、猪肉与豆腐制成的经典温馨炖汤。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣嫩豆腐汤 </span><span class="item-kr">&nbsp;&nbsp;(순두부)</span></div><div class="item-price-group"><span class="item-price">9,000 韩元</span></div></div><div class="item-desc">以丝滑嫩豆腐为主料的人气香辣汤。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">浓香酱曲汤 </span><span class="item-kr">&nbsp;&nbsp;(청국장)</span></div><div class="item-price-group"><span class="item-price">9,000 韩元</span></div></div><div class="item-desc">用深度发酵大豆与豆腐制成的浓郁炖汤。</div></div>
-      </div>
-
+      <!-- 韩式拌饭类 -->
       <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;爆炒与盖饭类 </span>
-          <span class="section-sub"></span>
+          <span class="section-title">&nbsp;&nbsp;&nbsp;韩式拌饭类</span>
         </div>
-
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣猪肉盖饭 </span><span class="item-kr">&nbsp;&nbsp;(제육덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">香辣腌制猪肉翻炒。 <span class="highlight">附赠米饭可拌在一起享用。</span></div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">炒辣猪肉 </span><span class="item-kr">&nbsp;&nbsp;(제육볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">辣椒酱腌制猪肉与蔬菜翻炒的经典韩式菜肴。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣鱿鱼盖饭 </span><span class="item-kr">&nbsp;&nbsp;(오징어덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">蔬菜香辣炒鱿鱼。 <span class="highlight">附赠米饭可拌在一起享用。</span></div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">炒辣鱿鱼 </span><span class="item-kr">&nbsp;&nbsp;(오징어볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">鲜嫩鱿鱼与蔬菜在香辣酱汁中大火快炒。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">鱿鱼炒五花肉 </span><span class="item-kr">&nbsp;&nbsp;(오삼불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc"><span class="highlight">需2人份起订。</span> 鱿鱼与五花肉在辣椒酱中完美碰撞的绝配。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">传统石锅拌饭</span><span class="item-kr">&nbsp;&nbsp;(돌솥비빔밥)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">米饭铺上各色蔬菜、肉类与辣椒酱，装在滚烫的石锅中。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">铜盆特色拌饭</span><span class="item-kr">&nbsp;&nbsp;(양푼비빔밥)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">盛装在传统大型金属混合盆中的经典拌饭。</div></div>
       </div>
 
-      <div class="page-footer1">
-        <span class="footer-greeting"></span>
-        <span class="footer-page"></span>
-      </div>
-    </div>
-
-    <!-- 중국어 3페이지 -->
-    <div class="page">
-      <div class="section" style="margin-bottom: 50px;">
+      <!-- 汤类与炖菜 -->
+      <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;小吃与配菜 </span>
-          <span class="section-sub"></span>
+          <span class="section-title">&nbsp;&nbsp;&nbsp;汤类与炖菜</span>
         </div>
-
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">大麦冷面 [水冷面 / 拌冷面] </span><span class="item-kr">&nbsp;&nbsp;(보리냉면 [물/비빔])</span></div><div class="item-price-group"><span class="item-price">9,000 韩元</span></div></div><div class="item-desc">筋道面条，可选手工清凉高汤(水)或香辣酱汁(拌)。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">锅巴汤 </span><span class="item-kr">&nbsp;&nbsp;(후식누룽지)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">用香脆锅巴煮成的温润粥品，石锅盛装。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">砂锅蒸鸡蛋 </span><span class="item-kr">&nbsp;&nbsp;(계란찜)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">松软、咸香、类似舒芙蕾口感的韩式蒸蛋。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">特级牛排骨汤</span><span class="item-kr">&nbsp;&nbsp;(특갈비탕)</span></div><div class="item-price-group"><span class="item-price">18,000 韩元</span></div></div><div class="item-desc">营养丰富、牛肉分量加倍的浓郁牛排骨汤。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">牛排骨汤</span><span class="item-kr">&nbsp;&nbsp;(갈비탕)</span></div><div class="item-price-group"><span class="item-price">13,000 韩元</span></div></div><div class="item-desc">慢火熬煮牛排骨制成的清澈滋补汤品。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">砂锅牛肉汤</span><span class="item-kr">&nbsp;&nbsp;(뚝불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">甜味腌制牛肉搭配蔬菜与粉丝的砂锅菜。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣牛杂汤</span><span class="item-kr">&nbsp;&nbsp;(소내장탕)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">用牛内脏和蔬菜熬制的浓郁辛辣汤品。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">鲜蛤大酱汤</span><span class="item-kr">&nbsp;&nbsp;(바지락된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">用新鲜蛤蜊和豆腐烹制的传统大酱汤。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">牛胸肉大酱汤</span><span class="item-kr">&nbsp;&nbsp;(차돌된장찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">加入细嫩牛胸肉与豆腐的浓郁大酱汤。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">部队火锅</span><span class="item-kr">&nbsp;&nbsp;(부대찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">由火腿、香肠、泡菜、豆腐和蔬菜制成的热门微辣炖菜。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">泡菜豆腐汤</span><span class="item-kr">&nbsp;&nbsp;(김치찌개)</span></div><div class="item-price-group"><span class="item-price">10,000 韩元</span></div></div><div class="item-desc">陈年泡菜、猪肉与豆腐制成的经典温馨炖汤。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣嫩豆腐汤</span><span class="item-kr">&nbsp;&nbsp;(순두부)</span></div><div class="item-price-group"><span class="item-price">9,000 韩元</span></div></div><div class="item-desc">以丝滑嫩豆腐为主料的人气香辣汤。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">浓香酱曲汤</span><span class="item-kr">&nbsp;&nbsp;(청국장)</span></div><div class="item-price-group"><span class="item-price">9,000 韩元</span></div></div><div class="item-desc">用深度发酵大豆与豆腐制成的浓郁炖汤。</div></div>
       </div>
 
-      <div class="section" style="margin-bottom: 50px;">
+      <!-- 爆炒与盖饭类 -->
+      <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;加菜与加料 </span>
-          <span class="section-sub"></span>
+          <span class="section-title">&nbsp;&nbsp;&nbsp;爆炒与盖饭类</span>
         </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣猪肉盖饭</span><span class="item-kr">&nbsp;&nbsp;(제육덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">香辣腌制猪肉翻炒。 <span class="highlight">附赠米饭可拌在一起享用。</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">炒辣猪肉</span><span class="item-kr">&nbsp;&nbsp;(제육볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">辣椒酱腌制猪肉与蔬菜翻炒的经典韩式菜肴。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">香辣鱿鱼盖饭</span><span class="item-kr">&nbsp;&nbsp;(오징어덮밥)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">蔬菜香辣炒鱿鱼。 <span class="highlight">附赠米饭可拌在一起享用。</span></div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">炒辣鱿鱼</span><span class="item-kr">&nbsp;&nbsp;(오징어볶음)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc">鲜嫩鱿鱼与蔬菜在香辣酱汁中大火快炒。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">鱿鱼炒五花肉</span><span class="item-kr">&nbsp;&nbsp;(오삼불고기)</span></div><div class="item-price-group"><span class="item-price">11,000 韩元</span></div></div><div class="item-desc"><span class="highlight">需2人份起订。</span> 鱿鱼与五花肉在辣椒酱中完美碰撞的绝配。</div></div>
+      </div>
 
+      <!-- 小吃与配菜 -->
+      <div class="section">
+        <div class="section-header">
+          <span class="section-title">&nbsp;&nbsp;&nbsp;小吃与配菜</span>
+        </div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">大麦冷面 [水冷面 / 拌冷面]</span><span class="item-kr">&nbsp;&nbsp;(보리냉면)</span></div><div class="item-price-group"><span class="item-price">9,000 韩元</span></div></div><div class="item-desc">筋道面条，可选手工清凉高汤(水)或香辣酱汁(拌)。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">锅巴汤</span><span class="item-kr">&nbsp;&nbsp;(후식누룽지)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">用香脆锅巴煮成的温润粥品。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">砂锅蒸鸡蛋</span><span class="item-kr">&nbsp;&nbsp;(계란찜)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">松软、咸香、类似舒芙蕾口感的韩式蒸蛋。</div></div>
+      </div>
+
+      <!-- 加菜与加料 -->
+      <div class="section">
+        <div class="section-header">
+          <span class="section-title">&nbsp;&nbsp;&nbsp;加菜与加料</span>
+        </div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">加一份大酱汤</span><span class="item-kr">&nbsp;&nbsp;(된장찌개 추가)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">砂锅热腾腾上桌。</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">加一份腌制辣螃蟹</span><span class="item-kr">&nbsp;&nbsp;(게장 추가)</span></div><div class="item-price-group"><span class="item-price">2,000 韩元</span></div></div><div class="item-desc">传统香辣生腌蟹小菜。</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">拉面面饼加料</span><span class="item-kr">&nbsp;&nbsp;(라면사리)</span></div><div class="item-price-group"><span class="item-price">1,000 韩元</span></div></div><div class="item-desc">可加入炖菜或火锅中的方便面块。</div></div>
         <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">加米饭</span><span class="item-kr">&nbsp;&nbsp;(밥 추가)</span></div><div class="item-price-group"><span class="item-price">1,000 韩元</span></div></div><div class="item-desc">一碗刚出锅的白米饭。</div></div>
       </div>
 
+      <!-- 酒水与饮料 -->
       <div class="section">
         <div class="section-header">
-          <span class="section-title">&nbsp;&nbsp;&nbsp;酒水与饮料 </span>
-          <span class="section-sub"></span>
+          <span class="section-title">&nbsp;&nbsp;&nbsp;酒水与饮料</span>
         </div>
-
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">烧酒 </span><span class="item-kr">&nbsp;&nbsp;(소주)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">极受欢迎的韩国清酒。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">啤酒 </span><span class="item-kr">&nbsp;&nbsp;(맥주)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">清爽解腻的韩国瓶装啤酒。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">覆盆子酒 </span><span class="item-kr">&nbsp;&nbsp;(복분자)</span></div><div class="item-price-group"><span class="item-price">15,000 韩元</span></div></div><div class="item-desc">用野生黑覆盆子酿制的传统韩国甜甜酒。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">清하/清酒 </span><span class="item-kr">&nbsp;&nbsp;(청하)</span></div><div class="item-price-group"><span class="item-price">6,000 韩元</span></div></div><div class="item-desc">清爽顺喉的韩国精酿米酒。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">马格利米酒 </span><span class="item-kr">&nbsp;&nbsp;(막걸리)</span></div><div class="item-price-group"><span class="item-price">4,000 韩元</span></div></div><div class="item-desc">传统乳白色微甜发酵米酒。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">软饮 </span><span class="item-kr">&nbsp;&nbsp;(음료수)</span></div><div class="item-price-group"><span class="item-price">2,000 韩元</span></div></div><div class="item-desc">可口可乐、雪碧、零度可乐、凤梨芬达。</div></div>
-        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">无醇啤酒 </span><span class="item-kr">&nbsp;&nbsp;(무알콜 맥주)</span></div><div class="item-price-group"><span class="item-price">3,000 韩元</span></div></div><div class="item-desc">零酒精的清爽麦芽饮品。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">烧酒</span><span class="item-kr">&nbsp;&nbsp;(소주)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">极受欢迎的韩国清酒。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">啤酒</span><span class="item-kr">&nbsp;&nbsp;(맥주)</span></div><div class="item-price-group"><span class="item-price">5,000 韩元</span></div></div><div class="item-desc">清爽解腻的韩国瓶装啤酒。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">覆盆子酒</span><span class="item-kr">&nbsp;&nbsp;(복분자)</span></div><div class="item-price-group"><span class="item-price">15,000 韩元</span></div></div><div class="item-desc">用野生黑覆盆子酿制的传统韩国甜甜酒。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">清酒</span><span class="item-kr">&nbsp;&nbsp;(청하)</span></div><div class="item-price-group"><span class="item-price">6,000 韩元</span></div></div><div class="item-desc">清爽顺喉的韩国精酿米酒。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">马格利米酒</span><span class="item-kr">&nbsp;&nbsp;(막걸리)</span></div><div class="item-price-group"><span class="item-price">4,000 韩元</span></div></div><div class="item-desc">传统乳白色微甜发酵米酒。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">软饮</span><span class="item-kr">&nbsp;&nbsp;(음료수)</span></div><div class="item-price-group"><span class="item-price">2,000 韩元</span></div></div><div class="item-desc">可口可乐、雪碧、零度可乐、凤梨芬达。</div></div>
+        <div class="menu-item"><div class="item-top"><div class="item-name-group"><span class="item-name">无醇啤酒</span><span class="item-kr">&nbsp;&nbsp;(무알콜 맥주)</span></div><div class="item-price-group"><span class="item-price">3,000 韩元</span></div></div><div class="item-desc">零酒精的清爽麦芽饮品。</div></div>
       </div>
 
-      <div class="page-footer">
+      <footer class="menu-footer">
         <span class="footer-greeting">欢迎光临本餐厅！如有任何忌口或饮食限制，请随时告知我们。</span>
-        <span class="footer-page"></span>
-      </div>
+      </footer>
     </div>
   </div>
+
 </body>
 </html>

@@ -78,7 +78,7 @@
   }
   .btn-lang:hover { background-color: #721f1f; transform: translateY(-2px); }
 
-  /* 💡 기타 언어 선택 박스 및 강조 스타일 */
+  /* 💡 전 세계 모든 언어가 담기는 강조 드롭다운 박스 */
   .other-lang-box {
     margin-top: 12px;
     padding: 14px;
@@ -97,14 +97,13 @@
     font-weight: 700;
   }
 
-  /* 구글 번역 드롭다운 셀렉트박스 커스텀 디자인 (100% 클릭 보장) */
-  #google_translate_element select {
+  #custom-translate-select {
     background-color: #ffffff !important;
     border: 2px solid #8c2727 !important;
     border-radius: 6px !important;
     padding: 10px 12px !important;
     font-family: 'Noto Sans KR', sans-serif !important;
-    font-size: 14px !important;
+    font-size: 13.5px !important;
     font-weight: 700 !important;
     color: #8c2727 !important;
     width: 100% !important;
@@ -113,9 +112,8 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   }
 
-  /* 구글 번역 로딩 후 거슬리는 상단 바 및 불필요한 텍스트 숨기기 */
-  .goog-te-gadget { font-size: 0px !important; color: transparent !important; }
-  .goog-te-gadget span { display: none !important; }
+  /* 구글 기본 위젯은 백그라운드 구동용으로 숨김 */
+  #google_translate_element { display: none !important; }
   .goog-te-banner-frame.skiptranslate { display: none !important; }
   body { top: 0px !important; }
 
@@ -261,20 +259,86 @@
   }
 </style>
 
-<!-- 구글 번역기 공식 초기화 스크립트 -->
+<!-- 구글 번역기 공식 초기화 스크립트 (includedLanguages 제한 해제로 전 세계 모든 언어 지원) -->
 <script type="text/javascript">
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'ko',
-      includedLanguages: 'mn,ja,es,fr,vi,pt,ru', // 몽골어, 일본어, 스페인어, 프랑스어, 베트남어, 포르투갈어, 러시아어
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
       autoDisplay: false
     }, 'google_translate_element');
+  }
+
+  // 💡 드롭다운에서 언어를 고르는 즉시 메뉴판으로 전환 및 번역 적용 함수
+  function selectWorldLanguage(langCode) {
+    if (!langCode) return;
+
+    // 1. 구글 번역 쿠키 강제 세팅
+    document.cookie = "googtrans=/ko/" + langCode;
+
+    // 2. 랜딩 화면을 즉시 숨기고 한국어 기본 메뉴판 영역을 표시한 뒤 최상단으로 이동
+    const landing = document.getElementById('landing-screen');
+    landing.style.opacity = '0';
+    
+    setTimeout(function() {
+      landing.style.display = 'none';
+      document.getElementById('menu-ko').style.display = 'block';
+      document.getElementById('backBtn').style.display = 'block';
+      window.scrollTo(0, 0);
+
+      // 3. 구글 번역 위젯 콤보박스에 값 전달 후 변경 이벤트 발생 (또는 쿠키 반영을 위해 새로고침)
+      var googleCombo = document.querySelector('.goog-te-combo');
+      if (googleCombo) {
+        googleCombo.value = langCode;
+        googleCombo.dispatchEvent(new Event('change'));
+      } else {
+        location.reload();
+      }
+    }, 200);
+  }
+
+  // 주력 3대 언어 버튼 클릭 시 이동 함수
+  function switchLanguage(lang) {
+    const landing = document.getElementById('landing-screen');
+    landing.style.opacity = '0';
+    
+    setTimeout(function() {
+      landing.style.display = 'none';
+      
+      document.getElementById('menu-ko').style.display = 'none';
+      document.getElementById('menu-en').style.display = 'none';
+      document.getElementById('menu-cn').style.display = 'none';
+      
+      if (lang === 'ko') {
+        document.getElementById('menu-ko').style.display = 'block';
+      } else if (lang === 'en') {
+        document.getElementById('menu-en').style.display = 'block';
+      } else if (lang === 'cn') {
+        document.getElementById('menu-cn').style.display = 'block';
+      }
+      
+      document.getElementById('backBtn').style.display = 'block';
+      window.scrollTo(0, 0);
+    }, 300);
+  }
+
+  function goHome() {
+    document.getElementById('menu-ko').style.display = 'none';
+    document.getElementById('menu-en').style.display = 'none';
+    document.getElementById('menu-cn').style.display = 'none';
+    document.getElementById('backBtn').style.display = 'none';
+    
+    const landing = document.getElementById('landing-screen');
+    landing.style.display = 'flex';
+    landing.style.opacity = '1';
+    window.scrollTo(0, 0);
   }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
+
+  <!-- 백그라운드 구글 번역 엔진 요소 -->
+  <div id="google_translate_element"></div>
 
   <!-- ==========================================================================
      [인트로 / 랜딩 화면]
@@ -294,10 +358,40 @@
       <button class="btn-lang" onclick="switchLanguage('en')">English Menu</button>
       <button class="btn-lang" onclick="switchLanguage('cn')">中文菜单</button>
       
-      <!-- 💡 구글 번역 드롭다운이 안으로 쏙 들어가는 강조 박스 -->
+      <!-- 💡 전 세계 모든 국가 언어(구글 제공 전체)를 고를 수 있는 강조 드롭다운 박스 -->
       <div class="other-lang-box">
-        <div class="other-lang-label">🌐 몽골·일·러·스페인어 등 다른 언어 선택</div>
-        <div id="google_translate_element"></div>
+        <div class="other-lang-label">🌐 All Languages (전 세계 모든 언어 선택)</div>
+        <select id="custom-translate-select" onchange="selectWorldLanguage(this.value)">
+          <option value="">-- Select Language / 언어 선택 --</option>
+          <option value="mn">Монгол (몽골어)</option>
+          <option value="ja">日本語 (일본어)</option>
+          <option value="es">Español (스페인어)</option>
+          <option value="fr">Français (프랑스어)</option>
+          <option value="vi">Tiếng Việt (베트남어)</option>
+          <option value="pt">Português (포르투갈어)</option>
+          <option value="ru">Русский (러시아어)</option>
+          <option value="ar">العربية (아랍어)</option>
+          <option value="de">Deutsch (독일어)</option>
+          <option value="hi">हिन्दी (힌디어)</option>
+          <option value="id">Indonesisch (인도네시아어)</option>
+          <option value="it">Italiano (이탈리아어)</option>
+          <option value="th">ไทย (태국어)</option>
+          <option value="tr">Türkçe (튀르키예어)</option>
+          <option value="uk">Українська (우크라이나어)</option>
+          <option value="ms">Melayu (말레이어)</option>
+          <option value="tl">Tagalog (타갈로그어)</option>
+          <option value="fa">فارسی (페르시아어)</option>
+          <option value="pl">Polski (폴란드어)</option>
+          <option value="nl">Nederlands (네덜란드어)</option>
+          <option value="sv">Svenska (스웨덴어)</option>
+          <option value="el">Ελληνικά (그리스어)</option>
+          <option value="cs">Čeština (체코어)</option>
+          <option value="ro">Română (루마니아어)</option>
+          <option value="hu">Magyar (헝가리어)</option>
+          <option value="fi">Suomi (핀란드어)</option>
+          <option value="da">Dansk (덴마크어)</option>
+          <option value="no">Norsk (노르웨이어)</option>
+        </select>
       </div>
     </div>
   </div>
@@ -307,7 +401,7 @@
 
 
   <!-- ==========================================================================
-     [1] 한국어 메뉴판 영역 (KO)
+     [1] 한국어 메뉴판 영역 (기본 기준 & 구글 번역 적용 대상)
      ========================================================================== -->
   <div id="menu-ko" class="menu-pane">
     <div class="page">
@@ -451,48 +545,6 @@
       </div>
     </div>
   </div>
-
-
-  <!-- ==========================================================================
-     [화면 전환 및 스크립트]
-     ========================================================================== -->
-  <script>
-    function switchLanguage(lang) {
-      const landing = document.getElementById('landing-screen');
-      landing.style.opacity = '0';
-      
-      setTimeout(function() {
-        landing.style.display = 'none';
-        
-        document.getElementById('menu-ko').style.display = 'none';
-        document.getElementById('menu-en').style.display = 'none';
-        document.getElementById('menu-cn').style.display = 'none';
-        
-        if (lang === 'ko') {
-          document.getElementById('menu-ko').style.display = 'block';
-        } else if (lang === 'en') {
-          document.getElementById('menu-en').style.display = 'block';
-        } else if (lang === 'cn') {
-          document.getElementById('menu-cn').style.display = 'block';
-        }
-        
-        document.getElementById('backBtn').style.display = 'block';
-        window.scrollTo(0, 0);
-      }, 400);
-    }
-
-    function goHome() {
-      document.getElementById('menu-ko').style.display = 'none';
-      document.getElementById('menu-en').style.display = 'none';
-      document.getElementById('menu-cn').style.display = 'none';
-      document.getElementById('backBtn').style.display = 'none';
-      
-      const landing = document.getElementById('landing-screen');
-      landing.style.display = 'flex';
-      landing.style.opacity = '1';
-      window.scrollTo(0, 0);
-    }
-  </script>
 
 </body>
 </html>

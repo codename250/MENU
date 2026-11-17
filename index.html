@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>능동숯불갈비 - Neungdong Charcoal Bulgogi</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,400;1,700&family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Lora', 'Noto Sans KR', 'Noto Sans SC', sans-serif;
+    background-color: #fdfbf7;
+    color: #2c2520;
+    line-height: 1.5;
+  }
+
+  /* ==========================================================================
+     [인트로/랜딩 화면 스타일]
+     ========================================================================== */
+  #landing-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fdfbf7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+    text-align: center;
+    transition: opacity 0.4s ease-in-out;
+    overflow-y: auto;
+  }
+
+  .landing-logo-container { margin-bottom: 15px; }
+  .landing-main-title {
+    font-family: 'Georgia', serif;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #8c2727;
+    margin-bottom: 6px;
+  }
+  .landing-sub-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: #6b5e54;
+    margin-bottom: 2px;
+  }
+
+  /* 언어 버튼 그룹 */
+  .lang-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 280px;
+    margin-top: 8px;
+  }
+
+  .btn-lang {
+    background-color: #8c2727;
+    color: #fdfbf7;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(140, 39, 39, 0.2);
+    transition: background-color 0.2s, transform 0.1s;
+  }
+  .btn-lang:hover { background-color: #721f1f; transform: translateY(-2px); }
+
+  /* 💡 기타 언어 선택 박스 및 강조 스타일 */
+  .other-lang-box {
+    margin-top: 12px;
+    padding: 14px;
+    background-color: #f3eee3;
+    border: 2px solid #8c2727;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(140, 39, 39, 0.15);
+  }
+  .other-lang-label {
+    font-size: 12px;
+    color: #8c2727;
+    margin-bottom: 8px;
+    font-weight: 700;
+  }
+
+  /* 구글 번역 드롭다운 셀렉트박스 커스텀 디자인 (100% 클릭 보장) */
+  #google_translate_element select {
+    background-color: #ffffff !important;
+    border: 2px solid #8c2727 !important;
+    border-radius: 6px !important;
+    padding: 10px 12px !important;
+    font-family: 'Noto Sans KR', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #8c2727 !important;
+    width: 100% !important;
+    outline: none !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  /* 구글 번역 로딩 후 거슬리는 상단 바 및 불필요한 텍스트 숨기기 */
+  .goog-te-gadget { font-size: 0px !important; color: transparent !important; }
+  .goog-te-gadget span { display: none !important; }
+  .goog-te-banner-frame.skiptranslate { display: none !important; }
+  body { top: 0px !important; }
+
+  /* 메뉴판 영역 및 플로팅 홈 버튼 */
+  .menu-pane { display: none; }
+  .back-to-home {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #8c2727;
+    color: #fdfbf7;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 998;
+    display: none;
+  }
+
+  /* ==========================================================================
+     [메뉴판 공통 디자인 스타일]
+     ========================================================================== */
+  @page { size: A4 portrait; margin: 0; }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background-color: #fdfbf7;
+    padding: 15mm 18mm;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .page-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 10px;
+    border-top: 1px solid #dfd3c3;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+    color: #7a6e62;
+  }
+  .footer-greeting { font-style: italic; }
+  .footer-page { white-space: nowrap; font-weight: 500; }
+  .page-break { page-break-before: always; break-before: page; }
+
+  .menu-header {
+    text-align: center;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 2.5px solid #8c2727;
+  }
+  .main-title {
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    color: #8c2727;
+  }
+  .sub-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #6b5e54;
+  }
+
+  .rules-box {
+    background-color: #f3eee3;
+    border: 1px solid rgba(140, 39, 39, 0.35);
+    border-left: 4px solid #8c2727;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+  .rules-title {
+    font-family: 'Georgia', 'Noto Serif KR', serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #8c2727;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #dfd3c3;
+    padding-bottom: 5px;
+  }
+  .rules-list { list-style: none; font-size: 11.5px; color: #3a322d; line-height: 1.55; }
+  .rules-list li { margin-bottom: 5px; padding-left: 12px; position: relative; }
+  .rules-list li::before { content: "•"; color: #8c2727; font-weight: bold; position: absolute; left: 0; }
+
+  .section { margin-bottom: 18px; }
+  .section-header {
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 2px solid #8c2727;
+    padding-bottom: 5px;
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Georgia', 'Noto Serif KR', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #8c2727;
+    flex: 1;
+  }
+  .section-sub {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12.5px;
+    font-weight: 500;
+    color: #6b5e54;
+    white-space: nowrap;
+  }
+
+  .menu-item { margin-bottom: 11px; }
+  .item-top { display: flex; align-items: baseline; justify-content: space-between; width: 100%; }
+  .item-name-group { display: flex; align-items: baseline; }
+  .item-name { font-family: 'Lora', sans-serif; font-size: 14.5px; font-weight: 700; color: #1f1a17; }
+  .item-kr { font-family: 'Noto Sans KR', sans-serif; font-size: 12.5px; font-weight: 500; color: #5c5046; margin-left: 4px; }
+  .item-price { font-family: 'Georgia', serif; font-size: 14px; font-weight: 700; color: #8c2727; white-space: nowrap; }
+  .item-weight { font-size: 10px; color: #6b5e54; white-space: nowrap; margin-left: 4px; }
+  .item-desc {
+    font-size: 12px;
+    font-style: italic;
+    color: #574c43;
+    margin-top: 1px;
+    padding-top: 1px;
+    background-image: radial-gradient(circle, #c8b9a6 1px, transparent 1px);
+    background-size: 4.5px 1px;
+    background-repeat: repeat-x;
+  }
+  .highlight { color: #8c2727; font-weight: 600; }
+
+  @media print {
+    #landing-screen, .back-to-home { display: none !important; }
+    .menu-pane { display: block !important; }
+  }
+</style>
+
+<!-- 구글 번역기 공식 초기화 스크립트 -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'ko',
+      includedLanguages: 'mn,ja,es,fr,vi,pt,ru', // 몽골어, 일본어, 스페인어, 프랑스어, 베트남어, 포르투갈어, 러시아어
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+     [인트로 / 랜딩 화면]
+     ========================================================================== -->
+  <div id="landing-screen">
+    <div class="landing-logo-container">
+      <div class="landing-main-title">KOREAN BBQ &amp; DINING</div>
+      <div class="landing-sub-title">능동숯불갈비 · NEUNGDONG CHARCOAL BBQ</div>
+      <div class="landing-sub-title" style="font-size: 11px; color: #9a8b7c; margin-top: 3px;">SINCE 1994, ORIGINATED 1982</div>
+    </div>
+    
+    <p style="font-size: 12.5px; color: #5c5046; margin-bottom: 8px;">Please select your preferred language<br>원하시는 언어를 선택해 주세요</p>
+    
+    <!-- 주력 3대 언어 전용 버튼 -->
+    <div class="lang-btn-group">
+      <button class="btn-lang" onclick="switchLanguage('ko')">한국어 메뉴판</button>
+      <button class="btn-lang" onclick="switchLanguage('en')">English Menu</button>
+      <button class="btn-lang" onclick="switchLanguage('cn')">中文菜单</button>
+      
+      <!-- 💡 구글 번역 드롭다운이 안으로 쏙 들어가는 강조 박스 -->
+      <div class="other-lang-box">
+        <div class="other-lang-label">🌐 몽골·일·러·스페인어 등 다른 언어 선택</div>
+        <div id="google_translate_element"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 플로팅 홈 버튼 -->
+  <button class="back-to-home" id="backBtn" onclick="goHome()">🌐 Language / 언어 선택</button>
+
+
+  <!-- ==========================================================================
+     [1] 한국어 메뉴판 영역 (KO)
+     ========================================================================== -->
+  <div id="menu-ko" class="menu-pane">
+    <div class="page">
+      <header class="menu-header" style="margin-bottom: 20px;">
+        <div class="main-title">능동숯불갈비</div>
+        <div class="sub-title">정통 한식 전문점 · 능동숯불갈비 다이닝</div>
+        <div class="sub-title">1994년 개업, 모태 1982년</div>
+      </header>
+
+      <div class="rules-box" style="margin-bottom: 45px;">
+        <div class="rules-title">&nbsp;&nbsp;&nbsp;&nbsp;구이 및 메인 요리 주문 안내 <span class="section-sub">(Order Rules)</span></div>
+        <ul class="rules-list">
+          <li><strong>기본 주문:</strong> 모든 구이 및 메인 요리는 <strong>2인분 이상</strong> 주문이 원칙입니다.</li>
+          <li><strong>참숯 구이류 (갈비 종류):</strong> 양념LA갈비, 소갈비살, 돼지갈비 등 참숯 구이류는 서로 섞어서 <strong>합산 2인분</strong> 주문이 가능합니다.</li>
+          <li><strong>생삼겹살 및 전골:</strong> 생삼겹살과 전골류는 해당 단일 메뉴로 <strong>2인분 이상</strong> 주문하셔야 합니다.</li>
+          <li><strong>불판이 다른 메뉴 동시 주문:</strong> 참숯구이와 생삼겹살은 불판 종류가 다릅니다. 동시 주문 시 각각 2인분씩 <strong>총 4인분 이상</strong>부터 가능합니다.</li>
+        </ul>
+      </div>
+
+      <div class="section" style="margin-bottom: 75px;">
+        <div class="section-header">
+          <span class="section-title">&nbsp;&nbsp;&nbsp;구이 및 전골류 (BBQ &amp; Hot Pot)</span>
+          <span class="section-sub">(Grill &amp; Hot Pot)</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">양념 LA갈비</span><span class="item-weight">(200g)</span></div><div class="item-price">23,000원</div></div>
+          <div class="item-desc">달콤짭조름한 특제 소스로 재운 LA갈비. <span class="highlight">참숯 불판에 테이블 직접 구이.</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">소갈비살</span><span class="item-weight">(150g)</span></div><div class="item-price">23,000원</div></div>
+          <div class="item-desc">부드럽고 육즙이 가득한 생소갈비살. <span class="highlight">참숯 불판에 테이블 직접 구이.</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">돼지갈비</span><span class="item-weight">(200g)</span></div><div class="item-price">18,000원</div></div>
+          <div class="item-desc">달콤한 간장 양념에 재워 부드러운 돼지갈비. <span class="highlight">참숯 불판에 테이블 직접 구이.</span></div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span class="footer-greeting">능동숯불갈비에 오신 것을 환영합니다! 알레르기나 식이 제한이 있으신 경우 미리 말씀해 주세요.</span>
+        <span class="footer-page">1 / 1 페이지</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+     [2] 영어 메뉴판 영역 (EN)
+     ========================================================================== -->
+  <div id="menu-en" class="menu-pane">
+    <div class="page">
+      <header class="menu-header" style="margin-bottom: 20px;">
+        <div class="main-title">KOREAN BBQ &amp; DINING</div>
+        <div class="sub-title">AUTHENTIC KOREAN CUISINE · Neung-Dong Charcoal BBQ</div>
+        <div class="sub-title">SINCE 1994, ORIGINATED 1982</div>
+      </header>
+
+      <div class="rules-box" style="margin-bottom: 45px;">
+        <div class="rules-title">&nbsp;&nbsp;&nbsp;&nbsp;BBQ &amp; Main Dish Ordering Rules <span class="section-sub">(주문 안내)</span></div>
+        <ul class="rules-list">
+          <li><strong>Minimum Order:</strong> All BBQ and Main Dishes must be ordered for a <strong>minimum of 2 servings</strong>.</li>
+          <li><strong>Charcoal BBQ:</strong> You can mix and match Charcoal BBQ items (LA Galbi, Beef Ribs, Pork Ribs) to reach 2 servings.</li>
+          <li><strong>Fresh Pork Belly &amp; Hot Pot:</strong> Must be ordered as at least 2 servings of the same item.</li>
+          <li><strong>Combining Grills:</strong> Charcoal BBQ and Pork Belly use different grill plates. Combining requires min. 2 servings per grill type (4+ total).</li>
+        </ul>
+      </div>
+
+      <div class="section" style="margin-bottom: 75px;">
+        <div class="section-header">
+          <span class="section-title">&nbsp;&nbsp;&nbsp;BBQ &amp; MAIN DISHES</span>
+          <span class="section-sub">(구이 및 전골류)</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">Marinated LA Galbi</span><span class="item-weight">(200g)</span><span class="item-kr">(양념LA갈비)</span></div><div class="item-price">23,000 KRW</div></div>
+          <div class="item-desc">Sweet &amp; savory soy-marinated cross-cut beef short ribs. <span class="highlight">Grilled at your table over live charcoal.</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">Beef Rib Meat</span><span class="item-weight">(150g)</span><span class="item-kr">(소갈비살)</span></div><div class="item-price">23,000 KRW</div></div>
+          <div class="item-desc">Tender and juicy unseasoned beef rib fingers. <span class="highlight">Grilled at your table over live charcoal.</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">Marinated Pork Ribs</span><span class="item-weight">(200g)</span><span class="item-kr">(돼지갈비)</span></div><div class="item-price">18,000 KRW</div></div>
+          <div class="item-desc">Tender pork ribs marinated in sweet soy sauce. <span class="highlight">Grilled at your table over live charcoal.</span></div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span class="footer-greeting">Welcome to our restaurant! Please let us know if you have any dietary restrictions.</span>
+        <span class="footer-page">Page 1 of 1</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+     [3] 중국어 메뉴판 영역 (CN)
+     ========================================================================== -->
+  <div id="menu-cn" class="menu-pane">
+    <div class="page">
+      <header class="menu-header" style="margin-bottom: 20px;">
+        <div class="main-title" style="letter-spacing: 2px;">능동숯불갈비 (凌洞炭烤排骨)</div>
+        <div class="sub-title">正宗韩国料理 · 炭火烤肉餐厅</div>
+        <div class="sub-title">始创于1994年 (渊源1982年)</div>
+      </header>
+
+      <div class="rules-box" style="margin-bottom: 45px;">
+        <div class="rules-title">&nbsp;&nbsp;&nbsp;&nbsp;烤肉及主菜点餐须知 <span class="section-sub">(点餐规则)</span></div>
+        <ul class="rules-list">
+          <li><strong>起点份数：</strong>所有烤肉及主菜类菜品<strong>x2人份起点</strong>。</li>
+          <li><strong>炭火烤肉类：</strong>不同炭火烤肉可混合搭配，<strong>累计满2人份</strong>即可。</li>
+          <li><strong>生五花肉与火锅：</strong>必须同种菜品<strong>满2人份起订</strong>。</li>
+          <li><strong>混合不同烤盘：</strong>炭火烤肉与生五花肉使用不同的烤盘。若想同时享用，每种烤盘需<strong>各自满2人份（总计4人份以上）</strong>。</li>
+        </ul>
+      </div>
+
+      <div class="section" style="margin-bottom: 75px;">
+        <div class="section-header">
+          <span class="section-title">&nbsp;&nbsp;&nbsp;BBQ &amp; MAIN DISHES</span>
+          <span class="section-sub">(烤肉与火锅)</span>
+        </div>
+
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">调味 LA 牛排</span><span class="item-weight">(200g)</span><span class="item-kr">(양념LA갈비)</span></div><div class="item-price">23,000 韩元</div></div>
+          <div class="item-desc">甜咸秘制酱汁腌制的横切牛排。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">精品牛肋条</span><span class="item-weight">(150g)</span><span class="item-kr">(소갈비살)</span></div><div class="item-price">23,000 韩元</div></div>
+          <div class="item-desc">鲜嫩多汁的原味牛肋肉。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div>
+        </div>
+        <div class="menu-item">
+          <div class="item-top"><div class="item-name-group"><span class="item-name">调味猪排</span><span class="item-weight">(200g)</span><span class="item-kr">(돼지갈비)</span></div><div class="item-price">18,000 韩元</div></div>
+          <div class="item-desc">甜酱油酱汁腌制的鲜嫩猪排。 <span class="highlight">使用炭火在您的桌上现场烤制。</span></div>
+        </div>
+      </div>
+
+      <div class="page-footer">
+        <span class="footer-greeting">欢迎光临本餐厅！如有任何忌口或饮食限制，请随时告知我们。</span>
+        <span class="footer-page">第 1 / 1 页</span>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================================================
+     [화면 전환 및 스크립트]
+     ========================================================================== -->
+  <script>
+    function switchLanguage(lang) {
+      const landing = document.getElementById('landing-screen');
+      landing.style.opacity = '0';
+      
+      setTimeout(function() {
+        landing.style.display = 'none';
+        
+        document.getElementById('menu-ko').style.display = 'none';
+        document.getElementById('menu-en').style.display = 'none';
+        document.getElementById('menu-cn').style.display = 'none';
+        
+        if (lang === 'ko') {
+          document.getElementById('menu-ko').style.display = 'block';
+        } else if (lang === 'en') {
+          document.getElementById('menu-en').style.display = 'block';
+        } else if (lang === 'cn') {
+          document.getElementById('menu-cn').style.display = 'block';
+        }
+        
+        document.getElementById('backBtn').style.display = 'block';
+        window.scrollTo(0, 0);
+      }, 400);
+    }
+
+    function goHome() {
+      document.getElementById('menu-ko').style.display = 'none';
+      document.getElementById('menu-en').style.display = 'none';
+      document.getElementById('menu-cn').style.display = 'none';
+      document.getElementById('backBtn').style.display = 'none';
+      
+      const landing = document.getElementById('landing-screen');
+      landing.style.display = 'flex';
+      landing.style.opacity = '1';
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+</body>
+</html>
